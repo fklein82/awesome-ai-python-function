@@ -1,18 +1,18 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: python-function
+  name: awesome-python-ai-image-function
   description: Python function powered by Function Buildpacks for Knative
   tags:
     - app-accelerator
-    - beta
     - function
     - buildpacks
     - knative
     - tanzu
     - python
+    - ai
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=python-function'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=awesome-python-ai-image-function'
 spec:
   type: service
   lifecycle: experimental
