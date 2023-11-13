@@ -1,3 +1,6 @@
 requests
 Pillow
 matplotlib
+mlflow
+numpy
+tensorflow-cpu
