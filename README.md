@@ -25,7 +25,7 @@ Replace the example implementation with your specific image detection code. For 
 ## Add the Accelerator on VMware Tanzu Application Platform
 
 ```bash
-tanzu acc create awesome-ai-video-recognition --git-repo https://github.com/fklein82/awesome-ai-video-recognition --git-branch main --interval 5s\n
+tanzu acc create awesome-python-ai-image-function --git-repo https://github.com/fklein82/awesome-ai-python-function.git --git-branch main --interval 5s\n
 ```
 
 ### Deploying on VMware Tanzu Application Platform

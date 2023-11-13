@@ -1,15 +1,15 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: python-function
+  name: awesome-python-ai-image-function
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: python-demo-ai
+    app.kubernetes.io/part-of: awesome-python-ai-image-function
     apps.tanzu.vmware.com/has-tests: "true"
 spec:
   source:
     git:
-      url: https://github.com/fklein82/tap-ai-demo3.git
+      url: https://github.com/fklein82/awesome-ai-python-function.git
       ref:
         branch: main
   build:
