@@ -1,0 +1,17 @@
+id: 7c410c46-69da-4978-8de5-d6fb189c1cf4
+timestamp: 2023-11-10T14:32:21Z
+username: fklein82
+source: TAP-GUI
+accelerator:
+  name: python-function
+  source:
+    image: registry.fklein.me/tap-packages/tap15@sha256:06ef79ba0d2b42cce6f630525e7844f50b8aa4b4ddd75bf47b12bd772f9ff925
+fragments:
+  - name: tap-workload
+    source:
+      image: registry.fklein.me/tap-packages/tap15@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  functionName: main
+  includeTap: true
+  interfaceType: http
+  projectName: python-function

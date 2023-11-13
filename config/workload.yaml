@@ -1,0 +1,18 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: python-function
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: python-demo-ai
+    apps.tanzu.vmware.com/has-tests: "true"
+spec:
+  source:
+    git:
+      url: https://github.com/fklein82/tap-ai-demo3.git
+      ref:
+        branch: main
+  build:
+    env:
+      - name: BP_FUNCTION
+        value: func.main
