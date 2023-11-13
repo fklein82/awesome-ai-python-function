@@ -37,32 +37,37 @@ def predict_image(model, img):
     predictions = model.predict(img_array)
     return decode_predictions(predictions, top=1)[0][0]
 
-# URL de l'image
-image_url = 'https://www.manutan.fr/fstrz/r/s/www.manutan.fr/img/S/GRP/ST/AIG18043952.jpg?frz-v=96'  # Remplacez avec l'URL de l'image que vous souhaitez analyser
+def main():
 
-# Enregistrement du processus avec MLflow
-with mlflow.start_run():
-    # Télécharge et analyse l'image
-    img = download_image(image_url)
-    if img is not None:
-        model = MobileNetV2(weights='imagenet')
-        prediction = predict_image(model, img)
-        
-        # Log information
-        mlflow.log_param("image_url", image_url)
-        mlflow.log_metric("prediction_confidence", float(prediction[2]))
+    # URL de l'image
+    image_url = 'https://www.manutan.fr/fstrz/r/s/www.manutan.fr/img/S/GRP/ST/AIG18043952.jpg?frz-v=96'  # Remplacez avec l'URL de l'image que vous souhaitez analyser
 
-        # Log l'image
-        img.save("predicted_image.jpg")
-        mlflow.log_artifact("predicted_image.jpg")
-        
-        # Log an instance of the trained model for later use
-        mlflow.tensorflow.log_model(model, artifact_path="object-detection")
+    # Enregistrement du processus avec MLflow
+    with mlflow.start_run():
+        # Télécharge et analyse l'image
+        img = download_image(image_url)
+        if img is not None:
+            model = MobileNetV2(weights='imagenet')
+            prediction = predict_image(model, img)
+            
+            # Log information
+            mlflow.log_param("image_url", image_url)
+            mlflow.log_metric("prediction_confidence", float(prediction[2]))
 
-        # Affiche l'image et la prédiction
-        plt.imshow(img)
-        plt.axis('off')
-        plt.title(f"Prédiction: {prediction[1]} (Confiance: {prediction[2]*100:.2f}%)")
-        plt.show()
-    else:
-        print("L'image n'a pas pu être téléchargée.")
+            # Log l'image
+            img.save("predicted_image.jpg")
+            mlflow.log_artifact("predicted_image.jpg")
+            
+            # Log an instance of the trained model for later use
+            mlflow.tensorflow.log_model(model, artifact_path="object-detection")
+
+            # Affiche l'image et la prédiction
+            plt.imshow(img)
+            plt.axis('off')
+            plt.title(f"Prédiction: {prediction[1]} (Confiance: {prediction[2]*100:.2f}%)")
+            plt.show()
+            return f"Prédiction: {prediction[1]} (Confiance: {prediction[2]*100:.2f}%)"
+
+        else:
+            print("L'image n'a pas pu être téléchargée.")
+
