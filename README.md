@@ -1,4 +1,4 @@
-# Image Classification Python Accelerator for Tanzu
+# Image Classification Python Accelerator for Tanzu 🐍📸
 This repository contains a Python accelerator for Tanzu that enables you to deploy a serverless image classification function as a TAP (Tanzu Application Platform) workload. The accelerator leverages the buildpacks provided by VMware's open-source Function Buildpacks for Knative project.
 
 ## Overview
@@ -56,12 +56,12 @@ tanzu apps workload create -f config/workload.yaml
 ## Monitor the deployment status:
 
 ```bash
-tanzu apps workload tail ai-video-recognition --timestamp --since 1h
+tanzu apps workload tail awesome-python-ai-image-function --timestamp --since 1h
 ```
 Once deployed, access your application via the URL provided by Tanzu Application Platform. You can find the URL with the following command:
 
 ```bash
-tanzu apps workload get ai-video-recognition
+tanzu apps workload get awesome-python-ai-image-function
 ```
 
 ## Customization
