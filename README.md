@@ -24,9 +24,6 @@ You can customize the code inside this file to implement your specific image cla
 
 If you want to explore more code samples for serverless functions that can be deployed within Tanzu Application Platform, you can check out the samples folder.
 
-## Deployment
-For detailed instructions on how to build, deploy, and test your customized serverless image classification function using Tanzu Application Platform, please refer to the DEPLOYING.md file provided in this repository.
-
 ## Image Classification Function
 The core functionality of this accelerator is the image classification function, which performs the following steps:
 
@@ -36,6 +33,9 @@ The core functionality of this accelerator is the image classification function,
 - Displays the image with the prediction confidence.
 
 This function can be integrated into various applications and workflows that require image analysis and classification.
+
+## Deployment
+For detailed instructions on how to build, deploy, and test your customized serverless image classification function using Tanzu Application Platform, please refer to the DEPLOYING.md file provided in this repository.
 
 ## Deploying on VMware Tanzu Application Platform
 To deploy this application on VMware Tanzu Application Platform, follow these steps:
