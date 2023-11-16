@@ -40,7 +40,9 @@ def predict_image(model, img):
 def main():
 
     # URL de l'image
-    image_url = 'https://www.fklein.me/download/iphone2.jpg'  # Remplacez avec l'URL de l'image que vous souhaitez analyser
+ #   image_url = 'https://www.fklein.me/download/iphone2.jpg'  # Remplacez avec l'URL de l'image que vous souhaitez analyser
+    image_url = 'https://www.fklein.me/download/rockstar.jpg'  # Remplacez avec l'URL de l'image que vous souhaitez analyser
+
 
     # Enregistrement du processus avec MLflow
     with mlflow.start_run():
